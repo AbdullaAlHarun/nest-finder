@@ -4,6 +4,7 @@ import MainLayout from "../layout/MainLayout";
 import Contact from "../componants/Contact";
 import UpdateProfile from "../componants/UpdateProfile";
 import Register from "../componants/Register";
+import NotFoundPage from "../pages/NotFoundPage";
 
 const router = createBrowserRouter([
     {
@@ -25,7 +26,11 @@ const router = createBrowserRouter([
             {
                 path: "/Contact",
                 element: <Contact></Contact>,
-            }
+            },
+            {
+                path: "*",
+                element: <NotFoundPage></NotFoundPage>,
+              },
         ]
     }
 ]);
