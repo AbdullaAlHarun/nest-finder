@@ -1,0 +1,111 @@
+[
+    {
+      "id": 1,
+      "estate_title": "Cozy Family Home",
+      "segment_name": "Residential",
+      "description": "Charming single-family home with spacious living areas and a backyard oasis.",
+      "price": "$350,000",
+      "status": "sale",
+      "area": "2,500 sq ft",
+      "location": "Oslo, Norway",
+      "facilities": ["3 bedrooms", "2 bathrooms", "Backyard patio"],
+      "image": "i0.wp.com/casawatkinsliving.com/wp-content/uploads/2018/11/colorful-cozy-family-room-fall-tour.jpg?fit=750%2C500&ssl=1"
+    },
+    {
+      "id": 2,
+      "estate_title": "Luxury Apartment Living",
+      "segment_name": "Residential",
+      "description": "Modern luxury apartment with stunning city views and top-notch amenities.",
+      "price": "$2,500/month",
+      "status": "rent",
+      "area": "1,200 sq ft",
+      "location": "Bergen, Norway",
+      "facilities": ["Gym", "Swimming pool", "24/7 security"],
+      "image": "https://luxury-art-penthouse-apartment.norway-hotel.com/data/Imgs/OriginalPhoto/1691/169177/169177632/img-luxury-art-penthouse-apartment-bergen-8.JPEG"
+    },
+    {
+      "id": 3,
+      "estate_title": "Townhouse Retreat",
+      "segment_name": "Residential",
+      "description": "Spacious townhouse with a private courtyard and modern finishes.",
+      "price": "$450,000",
+      "status": "sale",
+      "area": "1,800 sq ft",
+      "location": "Stavanger, Norway",
+      "facilities": ["Open-concept layout", "Private courtyard", "Attached garage"],
+      "image": "https://images.trvl-media.com/lodging/76000000/75600000/75599500/75599438/f1de5c4e.jpg"
+    },
+    {
+      "id": 4,
+      "estate_title": "Student Housing Hub",
+      "segment_name": "Residential",
+      "description": "Convenient student housing community near campus with shared amenities.",
+      "price": "$800/month",
+      "status": "rent",
+      "area": "500 sq ft (per room)",
+      "location": "Trondheim, Norway",
+      "facilities": ["Furnished rooms", "On-site laundry", "Study lounges"],
+      "image": "https://casita-img.imgix.net/uploads/buildings/159195/building/orig/14def702a9d204b2b18f29af4f34398604bdb7eaaa3c7539092ffc5a3b12b109.jpg"
+    },
+    {
+      "id": 5,
+      "estate_title": "Senior Living Haven",
+      "segment_name": "Residential",
+      "description": "Retirement community offering comfortable living and engaging activities for seniors.",
+      "price": "$3,000/month",
+      "status": "rent",
+      "area": "1,000 sq ft (studio)",
+      "location": "Tromsø, Norway",
+      "facilities": ["Assisted living services", "Social activities", "Wellness center"],
+      "image": "https://auroras-friends-apartment-tromso.hotelmix.co.uk/data/Photos/Big/13236/1323666/1323666673/Auroras-Friends-Apartment-Tromso-Exterior.JPEG"
+    },
+    {
+      "id": 6,
+      "estate_title": "Vacation Paradise",
+      "segment_name": "Residential",
+      "description": "Beachfront vacation rental with breathtaking ocean views and resort-style amenities.",
+      "price": "$300/night",
+      "status": "rent",
+      "area": "1,500 sq ft",
+      "location": "Lofoten, Norway",
+      "facilities": ["Private beach access", "Outdoor dining area", "Spa"],
+      "image": "https://cf.bstatic.com/xdata/images/hotel/max1024x768/335972695.jpg?k=8e3aa8d29b96bee5045d432accb498e46532dbc6c687b142da63d13eb6046145&o=&hp=1"
+    },
+    {
+      "id": 7,
+      "estate_title": "Family Retreat",
+      "segment_name": "Residential",
+      "description": "Spacious family retreat nestled in the mountains, perfect for nature lovers.",
+      "price": "$600,000",
+      "status": "sale",
+      "area": "3,000 sq ft",
+      "location": "Bodø, Norway",
+      "facilities": ["Mountain views", "Hiking trails nearby", "Fireplace"],
+      "image": "https://res.cloudinary.com/djew0njor/image/upload/v1624880621/-sqPa54YKQPMLt7hKQGuK.jpg"
+    },
+    {
+      "id": 8,
+      "estate_title": "City Center Condo",
+      "segment_name": "Residential",
+      "description": "Convenient condo living in the heart of downtown, close to shops and restaurants.",
+      "price": "$400,000",
+      "status": "sale",
+      "area": "1,000 sq ft",
+      "location": "Kristiansand, Norway",
+      "facilities": ["Balcony", "Fitness center", "Secure parking"],
+      "image": "https://cdn.hometogo.net/medium/v1/775/2ae/2c238b57c73993f7db0b226c27.jpg"
+    },
+    {
+      "id": 9,
+      "estate_title": "Lakefront Retreat",
+      "segment_name": "Residential",
+      "description": "Tranquil lakefront property with a private dock and stunning sunset views.",
+      "price": "$700,000",
+      "status": "sale",
+      "area": "2,500 sq ft",
+      "location": "Ålesund, Norway",
+      "facilities": ["Private dock", "Boat storage", "Outdoor deck"],
+      "image": "https://a0.muscache.com/im/pictures/00b6a11c-02be-486d-a34b-a9663e912103.jpg?im_w=720"
+    }
+  ]
+  
