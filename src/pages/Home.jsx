@@ -1,16 +1,20 @@
-
 import Estate from "../componants/Estate";
+import Footer from "../componants/Footer";
 import Slides from "../componants/Slides";
-import "../css/Slide.css"
+import "../css/Slide.css";
 
 const Home = () => {
-    return (
-        <div className="px-8 mt-8 rounded-lg ">
-        
-            <Slides></Slides>
-            <Estate></Estate>
-        </div>
-    );
+  return (
+    <div>
+      <div className="px-8 mt-8 rounded-lg ">
+        <Slides></Slides>
+        <Estate></Estate>
+      </div>
+      <div>
+        <Footer></Footer>
+      </div>
+    </div>
+  );
 };
 
 export default Home;

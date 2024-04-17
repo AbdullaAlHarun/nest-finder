@@ -6,6 +6,7 @@ import UpdateProfile from "../componants/UpdateProfile";
 import Register from "../componants/Register";
 import NotFoundPage from "../pages/NotFoundPage";
 import Estate from "../componants/Estate";
+import Login from "../componants/Login";
 
 const router = createBrowserRouter([
     {
@@ -23,6 +24,10 @@ const router = createBrowserRouter([
             {
                 path: '/Register',
                 element: <Register></Register>,
+            },
+            {
+                path: '/Login',
+                element: <Login></Login>,
             },
             {
                 path: "/Contact",

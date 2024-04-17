@@ -1,8 +1,6 @@
-
 import { Link, NavLink } from "react-router-dom";
 
 const Nav = () => {
-
   return (
     <div className="navbar bg-[#a90f33] shadow-lg fixed z-10">
       <div className="navbar-start">
@@ -55,15 +53,6 @@ const Nav = () => {
             </NavLink>
 
             <NavLink
-              to="/Pricing"
-              className={({ isActive }) =>
-                isActive ? "text-primary font-bold" : "font-bold"
-              }
-            >
-              Pricing
-            </NavLink>
-
-            <NavLink
               to="/Contact"
               className={({ isActive }) =>
                 isActive ? "text-primary font-bold" : "font-bold"
@@ -85,9 +74,9 @@ const Nav = () => {
           <NavLink
             to="/"
             className={({ isActive }) =>
-            isActive
-            ? "text-[#fff] font-bold btn btn-sm btn-neutral"
-            : "font-bold btn btn-sm btn-ghost text-white"
+              isActive
+                ? "text-[#fff] font-bold btn btn-sm btn-neutral"
+                : "font-bold btn btn-sm btn-ghost text-white"
             }
           >
             Home
@@ -96,7 +85,9 @@ const Nav = () => {
           <NavLink
             to="/UpdateProfile"
             className={({ isActive }) =>
-            isActive ? "text-white font-bold btn-sm btn btn-neutral" : "font-bold btn btn-sm btn-ghost text-white"
+              isActive
+                ? "text-white font-bold btn-sm btn btn-neutral"
+                : "font-bold btn btn-sm btn-ghost text-white"
             }
           >
             Update Profile
@@ -105,25 +96,20 @@ const Nav = () => {
           <NavLink
             to="/Register"
             className={({ isActive }) =>
-            isActive ? "text-white font-bold btn-sm btn btn-neutral" : "font-bold btn btn-sm btn-ghost text-white"
+              isActive
+                ? "text-white font-bold btn-sm btn btn-neutral"
+                : "font-bold btn btn-sm btn-ghost text-white"
             }
           >
             Register
           </NavLink>
 
           <NavLink
-            to="/Pricing"
-            className={({ isActive }) =>
-            isActive ? "text-white font-bold btn-sm btn btn-neutral" : "font-bold btn btn-sm btn-ghost text-white"
-            }
-          >
-            Pricing
-          </NavLink>
-
-          <NavLink
             to="/Contact"
             className={({ isActive }) =>
-            isActive ? "text-white font-bold btn-sm btn btn-neutral" : "font-bold btn btn-sm btn-ghost text-white"
+              isActive
+                ? "text-white font-bold btn-sm btn btn-neutral"
+                : "font-bold btn btn-sm btn-ghost text-white"
             }
           >
             Contact
@@ -131,7 +117,11 @@ const Nav = () => {
         </ul>
       </div>
       <div className="navbar-end">
-        <a className="btn btn-success mr-4 text-white">Sign In</a>
+        <NavLink
+        to="/Login"
+        >
+          <a className="btn btn-success mr-4 text-white">Log In</a>
+        </NavLink>
       </div>
     </div>
   );
