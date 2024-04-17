@@ -1,11 +1,12 @@
-import Hero from "../componants/Hero";
 
+import Slides from "../componants/Slides";
+import "../css/Slide.css"
 
 const Home = () => {
     return (
         <div className="px-8 mt-8 rounded-lg ">
-            <Hero></Hero>
-            
+        
+            <Slides></Slides>
         </div>
     );
 };

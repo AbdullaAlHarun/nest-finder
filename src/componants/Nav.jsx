@@ -4,7 +4,7 @@ import { Link, NavLink } from "react-router-dom";
 const Nav = () => {
 
   return (
-    <div className="navbar bg-base-100 shadow-lg fixed z-10">
+    <div className="navbar bg-[#a90f33] shadow-lg fixed z-10">
       <div className="navbar-start">
         <div className="dropdown">
           <div tabIndex={0} role="button" className="btn btn-ghost lg:hidden">
@@ -37,21 +37,21 @@ const Nav = () => {
             </NavLink>
 
             <NavLink
-              to="/listedBooks"
+              to="/UpdateProfile"
               className={({ isActive }) =>
                 isActive ? "text-primary font-bold" : "font-bold"
               }
             >
-              Listed Book
+              Update Profile
             </NavLink>
 
             <NavLink
-              to="/ToRead"
+              to="/Register"
               className={({ isActive }) =>
                 isActive ? "text-primary font-bold" : "font-bold"
               }
             >
-              Pages to Read
+              Register
             </NavLink>
 
             <NavLink
@@ -77,7 +77,7 @@ const Nav = () => {
           to="/"
           className="btn btn-ghost gap-0 font-bold normal-case text-xl text-info"
         >
-          Nest<span className="text-[#23BE0A]">Finder</span>
+          Nest<span className="text-[#fff]">Finder</span>
         </Link>
       </div>
       <div className="navbar-center hidden lg:flex ">
@@ -85,34 +85,36 @@ const Nav = () => {
           <NavLink
             to="/"
             className={({ isActive }) =>
-              isActive ? "text-primary font-bold btn btn-sm btn-outline btn-success" : "font-bold btn btn-sm btn-ghost"
+            isActive
+            ? "text-[#fff] font-bold btn btn-sm btn-neutral"
+            : "font-bold btn btn-sm btn-ghost text-white"
             }
           >
             Home
           </NavLink>
 
           <NavLink
-            to="/listedBooks"
+            to="/UpdateProfile"
             className={({ isActive }) =>
-              isActive ? "text-primary font-bold btn btn-sm btn-outline btn-success" : "font-bold btn btn-sm btn-ghost"
+            isActive ? "text-white font-bold btn-sm btn btn-neutral" : "font-bold btn btn-sm btn-ghost text-white"
             }
           >
-            Listed Book
+            Update Profile
           </NavLink>
 
           <NavLink
-            to="/ToRead"
+            to="/Register"
             className={({ isActive }) =>
-              isActive ? "text-primary font-bold btn btn-sm btn-outline btn-success" : "font-bold btn btn-sm btn-ghost"
+            isActive ? "text-white font-bold btn-sm btn btn-neutral" : "font-bold btn btn-sm btn-ghost text-white"
             }
           >
-            Pages to Read
+            Register
           </NavLink>
 
           <NavLink
             to="/Pricing"
             className={({ isActive }) =>
-              isActive ? "text-primary font-bold btn btn-sm btn-outline btn-success" : "font-bold btn btn-sm btn-ghost"
+            isActive ? "text-white font-bold btn-sm btn btn-neutral" : "font-bold btn btn-sm btn-ghost text-white"
             }
           >
             Pricing
@@ -121,7 +123,7 @@ const Nav = () => {
           <NavLink
             to="/Contact"
             className={({ isActive }) =>
-              isActive ? "text-primary font-bold btn btn-sm btn-outline btn-success" : "font-bold btn btn-sm btn-ghost"
+            isActive ? "text-white font-bold btn-sm btn btn-neutral" : "font-bold btn btn-sm btn-ghost text-white"
             }
           >
             Contact
@@ -129,7 +131,7 @@ const Nav = () => {
         </ul>
       </div>
       <div className="navbar-end">
-        <a className="btn bg-[#23BE0A] mr-4 text-white">Sign In</a>
+        <a className="btn btn-success mr-4 text-white">Sign In</a>
       </div>
     </div>
   );
