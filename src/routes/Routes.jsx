@@ -5,6 +5,7 @@ import Contact from "../componants/Contact";
 import UpdateProfile from "../componants/UpdateProfile";
 import Register from "../componants/Register";
 import NotFoundPage from "../pages/NotFoundPage";
+import Estate from "../componants/Estate";
 
 const router = createBrowserRouter([
     {
@@ -26,6 +27,11 @@ const router = createBrowserRouter([
             {
                 path: "/Contact",
                 element: <Contact></Contact>,
+            },
+            {
+                path: "/Estate",
+                element: <Estate></Estate>,
+                loader: () => fetch("/nestFinder.json").then((response) => response.json()),
             },
             {
                 path: "*",
