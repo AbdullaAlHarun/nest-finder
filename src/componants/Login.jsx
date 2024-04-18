@@ -1,32 +1,26 @@
-import { useContext } from 'react';
 import { useForm } from 'react-hook-form';
-import { AuthContex } from '../providers/AuthProvider';
+import useAuth from '../hooks/useAuth';
 
 const Login = () => {
-  const { register, formState: { errors } } = useForm();
+  const { signInUser, googleLogin, githubLogin } = useAuth();
+  const { register, handleSubmit, formState: { errors } } = useForm();
 
-const {signInUser} = useContext(AuthContex)
-
-  const handleLogin = e => {
-    e.preventDefault();
-    const email = e.target.email.value;
-    const password = e.target.password.value;
-    console.log(email,password);
-
-    signInUser(email,password)
-    .then(result=>{
-        console.log(result.user)
-    })
-    .catch(error =>{
-        console.error(error)
-    })
+  const onSubmit = (data) => {
+    const { email, password } = data;
+    signInUser(email, password)
+      .then((result) => {
+        console.log(result.user);
+      })
+      .catch((error) => {
+        console.error(error);
+      });
   };
 
   return (
     <div className="min-h-screen bg-gray-100 flex justify-center items-center">
       <div className="bg-white shadow-md rounded px-8 pt-6 pb-8 w-full max-w-md">
         <h2 className="text-2xl font-bold mb-6 text-center">Login</h2>
-        <form onSubmit={handleLogin}>
+        <form onSubmit={handleSubmit(onSubmit)}>
           <div className="mb-4">
             <label className="block text-gray-700 text-sm font-bold mb-2" htmlFor="email">Email</label>
             <input {...register("email", { required: true })} type="email" id="email" name="email" className="w-full px-3 py-2 border rounded-md" />
@@ -42,9 +36,19 @@ const {signInUser} = useContext(AuthContex)
             <a href="/register" className="inline-block align-baseline font-bold text-sm text-blue-500 hover:text-blue-800">Create an account</a>
           </div>
         </form>
-        <div className="mt-4">
-          <button className="bg-red-500 hover:bg-red-600 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline w-full">Login with Google</button>
-          <button className="bg-gray-800 hover:bg-gray-900 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline mt-2 w-full">Login with GitHub</button>
+        <div className="flex justify-between mt-4">
+          <button
+            onClick={()=>googleLogin()}
+            className="bg-red-600 hover:bg-red-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline"
+          >
+            Login with Google
+          </button>
+          <button
+            onClick={()=>githubLogin()}
+            className="bg-gray-800 hover:bg-gray-900 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline"
+          >
+            Login with GitHub
+          </button>
         </div>
       </div>
     </div>

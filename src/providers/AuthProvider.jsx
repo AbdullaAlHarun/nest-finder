@@ -1,34 +1,73 @@
-import { createContext, useState } from "react";
-import PropTypes from 'prop-types';
-import { createUserWithEmailAndPassword, signInWithEmailAndPassword } from "firebase/auth";
+import { createContext, useEffect, useState } from "react";
+import PropTypes from "prop-types";
+import {
+    GithubAuthProvider,
+    GoogleAuthProvider,
+  createUserWithEmailAndPassword,
+  onAuthStateChanged,
+  signInWithEmailAndPassword,
+  signInWithPopup,
+  signOut,
+  
+} from "firebase/auth";
 import auth from "../firebase/firebase.config";
+
 
 export const AuthContex = createContext(null);
 
+//Social Auth Providers
+const googleProvider = new GoogleAuthProvider();
+const githubProvider = new GithubAuthProvider();
 
+const AuthProvider = ({ children }) => {
+  const [user, setUser] = useState(null);
 
-const AuthProvider = ({children}) => {
-    const [user, setUser] = useState(null);
+  const creatUser = (email, password) => {
+    return createUserWithEmailAndPassword(auth, email, password);
+  };
 
-    const creatUser = (email, password) =>{
-        return createUserWithEmailAndPassword(auth,email, password);
-    }
-    
-    const signInUser = (email, password) => {
-        return signInWithEmailAndPassword(auth,email,password)
-    }
-    
+  const signInUser = (email, password) => {
+    return signInWithEmailAndPassword(auth, email, password);
+  };
+// SignOut 
+  const logOut = () => {
+    return signOut(auth)
+  };
 
-    const authInfo = {user, creatUser,signInUser}
+  //Google Sign In 
+  const googleLogin = () => {
+    return signInWithPopup(auth,googleProvider)
+  }
+  //Github Sign In 
+  const githubLogin = () => {
+    return signInWithPopup(auth,githubProvider)
+  }
 
-    return (
-        <AuthContex.Provider value={authInfo}>
-            {children}
-        </AuthContex.Provider>
-    );
+  //obserber 
+  useEffect(() => {
+    const unSubscribe = onAuthStateChanged(auth, (currentUser) => {
+      setUser(currentUser);
+      console.log("observing user", currentUser);
+    });
+
+    return () => {
+      unSubscribe();
+    };
+  }, []);
+
+  const authInfo = {
+    user,
+    creatUser,
+    signInUser,
+    logOut,
+    googleLogin,
+    githubLogin,
+  };
+
+  return <AuthContex.Provider value={authInfo}>{children}</AuthContex.Provider>;
 };
 
 export default AuthProvider;
 AuthProvider.propTypes = {
-    children: PropTypes.node
-}
+  children: PropTypes.node,
+};
