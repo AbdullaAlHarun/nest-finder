@@ -5,7 +5,7 @@ const Estate = () => {
   const [estates, setEstates] = useState([]);
 
   useEffect(() => {
-    fetch("/nestFinder.json") // Fetch the JSON data from the public folder
+    fetch("/nestFinder.json")
       .then((response) => response.json())
       .then((data) => setEstates(data))
       .catch((error) => console.error("Error fetching data:", error));
@@ -23,7 +23,7 @@ const Estate = () => {
         <div className="grid grid-cols-1 gap-4 md:grid-cols-2 lg:grid-cols-3">
           {estates.map((estate) => (
             <div key={estate.id} className="group">
-              <Link to={`/book/${estate.id}`} className="block rounded-lg overflow-hidden shadow-lg hover:shadow-xl">
+              <Link to={`/nestFinder/${estate.id}`} className="block rounded-lg overflow-hidden shadow-lg hover:shadow-xl">
                 <img src={estate.image} alt={estate.estate_title} className="w-full h-80 object-cover" />
                 <div className="p-4">
                   <h3 className="font-bold text-xl mb-2">{estate.estate_title}</h3>
@@ -38,7 +38,7 @@ const Estate = () => {
                       <li key={index} className="bg-gray-200 text-gray-700 text-xs px-2 py-1 rounded mr-1">{facility}</li>
                     ))}
                   </ul>
-                  <Link to={`/book/${estate.id}`} className="inline-block bg-blue-500 hover:bg-blue-600 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline">
+                  <Link to={`/nestFinder/${estate.id}`} className="inline-block bg-blue-500 hover:bg-blue-600 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline">
                     View Property
                   </Link>
                 </div>
