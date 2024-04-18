@@ -1,8 +1,12 @@
 
+import { useContext } from 'react';
 import { useForm } from 'react-hook-form';
+import { AuthContex } from '../providers/AuthProvider';
 
 const Register = () => {
   const { register, formState: { errors } } = useForm();
+
+  const {creatUser} = useContext(AuthContex);
 
   const handleRegister = e => {
     e.preventDefault();
@@ -10,6 +14,16 @@ const Register = () => {
     const email = e.target.email.value;
     const password = e.target.password.value;
     console.log(name,email,password);
+
+    // creat user in firebase 
+    creatUser(email, password)
+    .then(result=>{
+        console.log(result.user)
+    })
+    .catch(error =>{
+        console.error(error)
+    })
+
   };
 
   return (

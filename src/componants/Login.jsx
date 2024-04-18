@@ -1,13 +1,25 @@
+import { useContext } from 'react';
 import { useForm } from 'react-hook-form';
+import { AuthContex } from '../providers/AuthProvider';
 
 const Login = () => {
   const { register, formState: { errors } } = useForm();
+
+const {signInUser} = useContext(AuthContex)
 
   const handleLogin = e => {
     e.preventDefault();
     const email = e.target.email.value;
     const password = e.target.password.value;
     console.log(email,password);
+
+    signInUser(email,password)
+    .then(result=>{
+        console.log(result.user)
+    })
+    .catch(error =>{
+        console.error(error)
+    })
   };
 
   return (
