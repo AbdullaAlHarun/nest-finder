@@ -7,11 +7,13 @@ import Register from "../componants/Register";
 import NotFoundPage from "../pages/NotFoundPage";
 import Estate from "../componants/Estate";
 import Login from "../componants/Login";
+import EstateDetails from "../componants/EstateDetails";
 
 const router = createBrowserRouter([
     {
         path: '/',
         element: <MainLayout> </MainLayout>,
+        errorElement: <NotFoundPage></NotFoundPage>,
         children: [
             {
                 path: '/',
@@ -37,6 +39,10 @@ const router = createBrowserRouter([
                 path: "/Estate",
                 element: <Estate></Estate>,
                 loader: () => fetch("/nestFinder.json").then((response) => response.json()),
+            },
+            {
+                path: "/nestFinder/:id", 
+                element: <EstateDetails></EstateDetails>,
             },
             {
                 path: "*",
